@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Run webserver with php -S localhost:3333 -->
+<!-- Or substitute the local port to anything above > 1024 and < 65536 -->
+
+<head>
+	<title>My First Webpage</title>
+	<meta charset="utf-8">
+
+	<!-- See https://www.w3schools.com/CSS/css_rwd_viewport.asp -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- You can also define the contents of the file inside a <style> tag -->
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<section>
+		<header>
+			<h2>HTML Forms</h2>
+			<p>A quick example</p>
+		</header>
+
+		<p>Let's see how HTML forms work.</p>
+
+		<!-- EVERYTHING you need to know is in https://www.w3schools.com/html/html_form_attributes.asp -->
+		<article>
+			<form action="/handler_page_db.php" method="POST">
+				<label for="tname">Table name:</label>
+				<br>
+				<input type="text" id="tname" name="tname" placeholder="(required)" required><br>
+
+				<br>
+				<br>
+
+				<input type="submit" value="Submit">
+			</form>
+		</article>
+	</section>
+
+	<footer>
+		<p>Footer: good idea to include copyright information.</p>
+	</footer>
+</body>
+
+</html>

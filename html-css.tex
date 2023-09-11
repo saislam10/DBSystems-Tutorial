@@ -1,0 +1,129 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{algorithm}
+\usepackage[noend]{algorithmic}
+\usepackage{amsmath, amsthm, amssymb, amsfonts}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{xy}
+\usepackage{url}
+
+%\usepackage{fancyhdr}
+%\usepackage{setspace}
+%\usepackage{enumerate}
+%\usepackage{multirow}
+
+%\usepackage{polyglossia}
+%\setdefaultlanguage{english}
+%\setotherlanguage{portuguese}
+
+\usepackage{fontspec}
+\usepackage{xunicode}
+
+\defaultfontfeatures{Mapping=tex-text}
+\setmainfont{Times New Roman}
+\setsansfont[Scale=MatchLowercase]{Helvetica}
+\setmonofont[Scale=MatchLowercase]{Courier}
+
+%\newfontfamily\chamada[opcoes]{nomefonte}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{observation}[theorem]{Observation}
+
+\newcommand{\set}[1]{\{#1\}} 
+\newcommand{\setof}[2]{\{\,{#1}|~{#2}\,\}}
+\newcommand{\compl}[1]{\overline{#1}}
+
+\newcommand{\C}{\mathbb{C}} 
+\newcommand{\N}{\mathbb{N}} 
+\newcommand{\Q}{\mathbb{Q}} 
+\newcommand{\R}{\mathbb{R}} 
+\newcommand{\Z}{\mathbb{Z}}
+
+\newcommand{\checkbox}{\item[$\square$]}
+
+\lstset{basicstyle=\small,stringstyle=\ttfamily,tabsize=3}
+
+\title{Template}
+\author{Hammurabi Mendes}
+%\date{_Insert date here_}
+
+\begin{document}
+
+\maketitle
+
+\section{Statically listing Senators and Votes}
+
+In this section, you are going to adapt your code that imports senators and votes into the database, making it generate static content for an HTML listing of these entities. Essentially, you simply re-format the output of your program to generate a fraction of HTML code (maybe a sequence of \texttt{<li>} elements, interspersed with text). Then, you add the content \emph{statically} into your HTML code.
+
+\subsection{HTML work}
+
+In the HTML tutorial listed below, please read up to, including, the section titled ``HTML vs. XHTML''.
+%
+\begin{center}
+	\url{https://www.w3schools.com/html/default.asp}
+\end{center}
+%
+\textbf{Task.} Create a responsive webpage with two main navigational elements:
+\begin{enumerate}
+	\item Senator
+	\item Vote
+\end{enumerate}
+The main webpage should be coded in a file called \texttt{main.html}. The senator subpage should be coded in a separate file \texttt{senators.html}. The page displays the Senator's name, state, party, and state. The vote subpage, also coded in a separate file \texttt{votes.html} displays the vote title, number, and date only.
+
+Please refer to the ``HTML Semantics'' subsection of the tutorial. All pages that you create must have the navigational elements ``Senators'' and ``Votes'', directing users to the appropriate page. Every page needs a header, and a footer -- the latter including the students' names and copyright information. You can choose your preferred copyright license from
+%
+\begin{center}
+	\url{https://creativecommons.org/licenses/}
+\end{center}
+%
+(other licenses are accepted, at your complete discretion). Senators and votes are listed using \texttt{<sen-entry>} or \texttt{<vot-entry>} semantic elements defined by you.
+
+\subsection{CSS work}
+
+In the CSS tutorial listed below, please read up to, including, the section titled ``CSS !mportant''. Do not read the ``CSS Forms'' section right now (you will add dynamic content in HW2).
+
+\begin{center}
+	\url{https://www.w3schools.com/css/default.asp}
+\end{center}
+
+I want an \emph{external} CSS style sheet called \texttt{style353.css}. Your job is to make your report website above better-looking, with the following requirements:
+\begin{enumerate}
+	\item Specify colors using HEX. Include an comment in the top of your style sheet answering the question: ``Why the HEX format has 6 hexadecimal digits?''. Please refer to the ``CSS Colors/{RGB,HEX}'' sections of the tutorial.
+	\item Use \emph{web-safe, sans-serif} fonts. Please refer to the ``CSS Fonts'' section of the tutorial.
+	\item In the contents section, the \texttt{<sen-entry>} or \texttt{<vot-entry>} semantic elements should include a small margin so they are not too close to the left or right side or their pages. Border or padding are optional upon your discretion (please refer to ``CSS Box Model'').
+	\item In the navigational section, use borders at your discretion and taste. It should contain entries for ``Senators'' and ``Votes'', so the user can switch between different content. The active navigational entry (that is, ``Senators'' or ``Votes'') should be highlighted (please refer to ``CSS Navigation Bar/Vertical Navbar'').
+	\item The navigational section entries for ``Senators'' and ``Votes'' should appear horizontally on screens ``large enough'' (your definition), and vertically otherwise.
+	\item In the contents section, the \texttt{<sen-entry>} or \texttt{<vot-entry>} semantic elements should be laid out with borders that fit your background colors.
+	\item Change link colors so they fit your overall site colors, at ``link'', ``visited'', ``hover'', and ``active'' states (please refer to ``CSS Links''). If you have a blue-themed website, change them anyway to closeby colors.
+	\item Do not include distracting backgrounds, text shadows, GIFs\footnote{I know, right?}, etc. Aim for a clean and intuitive look.
+\end{enumerate}
+
+\section{Reflection}
+
+Hand over a PDF answering the questions below. Regarding the database part of the homework:
+\begin{enumerate}
+	\item If you choose a linked list to store the already-identified senators you chose the \emph{wrong} data structure. Why is a linked list the \emph{wrong} choice?
+
+	\item Even if we choose the \emph{right} data structure (which you figured out by this point), what can happen if we are not parsing a list of a few hundred senators, but instead a list of a few trillion data points? What is the problem?
+
+	\item What is the solution to the problem identified above?
+\end{enumerate}
+
+Regarding the second part of the homework:
+\begin{enumerate}
+	\item What happens if votes are being updated daily? What is our only choice if votes are being updated daily?
+
+	\item What is missing?
+\end{enumerate}
+
+\bibliography{/Users/hmendes/brown/Bibliography.bib}
+\bibliographystyle{plain}
+
+\end{document}

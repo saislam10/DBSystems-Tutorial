@@ -1,0 +1,91 @@
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	/* List font names/families in order of preference */
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+header {
+	background-color: rgb(112, 71, 71);
+	padding: 30px;
+	text-align: center;
+	font-size: 25px;
+	color: white;
+}
+
+header p {
+	font-size: 10px;
+}
+
+/* [ Box [ Margin [ Border [ Padding [ Content ] Padding ] Border ] Margin ] Box ]
+
+	Margin: Limit around the border
+	Padding: Limit inside the border
+
+	https://www.w3schools.com/Css/css_boxmodel.asp
+*/
+nav {
+	background-color: rgb(117, 117, 117);
+}
+
+nav ul {
+	list-style-type: none;
+	padding: 0;
+	/* Try removing it */
+	background-color: rgb(236, 236, 236);
+}
+
+nav li a {
+	float: left;
+	display: block;
+	/* Generates line blocks after the box; see reference */
+	color: rgb(0, 0, 0);
+	padding: 8px 16px;
+	text-decoration: none;
+	/* Remove underlines */
+}
+
+nav li a:hover {
+	background-color: rgb(117, 117, 117);
+	color: rgb(245, 234, 234);
+}
+
+aside {
+	width: 30%;
+	float: right;
+}
+
+section {
+	background-color: rgb(236, 236, 236);
+	/* float: left; */
+	padding: 20px;
+	/* width: 70%; */
+}
+
+footer {
+	background-color: rgb(117, 117, 117);
+	padding: 10px;
+	text-align: center;
+	color: white;
+	clear: left;
+	/* If someone is floating left, "clear" it so we jump to the next line: https://www.w3schools.com/Css/css_float_clear.asp */
+}
+
+/* Responsive layout: stack aside and section if the screen's max-width < 400px */
+@media (max-width: 400px) {
+	aside,
+	section {
+		width: 100%;
+		height: auto;
+	}
+}
+
+@media (max-width: 400px) {
+	nav a {
+		width: 100%;
+		float: none;
+	}
+}

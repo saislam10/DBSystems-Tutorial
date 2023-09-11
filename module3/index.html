@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>My First Webpage</title>
+	<meta charset="utf-8">
+
+	<!-- See https://www.w3schools.com/CSS/css_rwd_viewport.asp -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- You can also define the contents of the file inside a <style> tag -->
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<section>
+		<header>
+			<h2>HTML Forms</h2>
+			<p>A quick example</p>
+		</header>
+
+		<p>Let's see how HTML forms work.</p>
+
+		<!-- EVERYTHING you need to know is in https://www.w3schools.com/html/html_form_attributes.asp -->
+		<article>
+			<form action="/handler_page.php" method="POST">
+				<label for="fname">First name:</label>
+				<br>
+				<!-- Use "value" instead of "placeholder" for a default entered value -->
+				<!-- Note the required attribute here, but not in the last name -->
+				<input type="text" id="fname" name="fname" placeholder="(required)" required><br>
+
+				<label for="lname">Last name:</label>
+				<br>
+				<!-- Use "value" instead of "placeholder" for a default entered value -->
+				<input type="text" id="lname" name="lname" placeholder="(optional)"><br>
+
+				<label for="lname">Telephone:</label>
+				<br>
+				<!-- Learn the syntax for regular expression patterns in https://regexone.com/ -->
+				<input type="text" id="phone" name="phone" placeholder="555-555-1234" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+				
+				<br>
+				<br>
+
+				<input type="submit" value="Submit">
+			</form>
+		</article>
+	</section>
+
+	<footer>
+		<p>Footer: good idea to include copyright information.</p>
+	</footer>
+</body>
+
+</html>
